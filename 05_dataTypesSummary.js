@@ -55,3 +55,32 @@ console.log(typeof scoreValue) //Number
 // https://262.ecma-international.org/5.1/#sec-11.4.3
 
 // Js mastery --> Objects & Browser Events
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Stack(Primitive) & Heap(Non Primitive)
+
+let myName = "sandarbh05"
+let anotherName = myName
+anotherName = "sandarbhvansh"
+//It should have been changed to sandarbhvansh logically but since we are working with primitive data types that means any changes made are reflected on the copy of the original value therefore original variable's value won't change
+
+console.log(myName)
+console.log(anotherName)
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userTwo
+
+userTwo.email="sandarbh@google.com"
+
+console.log(userOne.email)
+console.log(userTwo.email)
+
+//Conclusion : Both user's email gets updated as both user variables refer to same memory space, whereas both names don't as they are primitive data type and copy of them are created 
+
+// https://app.eraser.io/workspace/io3YYOzzFpYEdT5Jn1KD?origin=share
+// Open Link for Illustration reference
