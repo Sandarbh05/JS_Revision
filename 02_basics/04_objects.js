@@ -40,3 +40,32 @@ console.log(Object.values(tinderUser)); //Gives list of values in an Array
 console.log(Object.entries(tinderUser)); //Gives each entry of objects key-value pair in sets of Arrays
 
 console.log(tinderUser.hasOwnProperty('isLoggedIn')); //Check if the object has specific property available or not
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+const course = {
+    courseame: "English Tutorials Simplified",
+    price: "999",
+    courseInstructor: "sandarbh"
+}
+
+// course.courseInstructor
+
+const { courseInstructor: Instructor } = course //Destructured and renamed
+
+console.log(Instructor);
+
+//Sample API response
+// {
+//     "name": "sandarbh",
+//     "coursename": "js",
+//     "price": "free"
+// }
+
+// randomuser me api for sample APIs --> JSON formatter for readibility
+//API response in form of array 
+// [
+//     {},
+//     {},
+//     {}
+// ]
