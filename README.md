@@ -16,3 +16,8 @@ Thirdly, Eval Execution Context
 //Global Execution Context is present at the bottom
 //Next each function gets pushed to the stack one by one and its nested blocks, then popped right after its execution is done
 
+In Browser : 
+document.baseURI
+document.links --> Gives result in HTMLcollection, nodeCollection but can be converted to arrays
+document.getElementById('first heading').innerHTML = "<h1>sandarbh</h1>"
+

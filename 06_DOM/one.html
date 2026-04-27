@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn DOM</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff
+        }
+    </style>
+</head>
+<body>
+    <!-- Document Object Model -->
+    <div class="bg-black">
+        <h1 id="title" class="heading">Learning and Revising DOM in JS <span style="display: none;"> test text</span></h1>
+        <p>Lorem ipsum dolor sit amet</p>
+        <ul>
+            <li class="list-item">A</li>
+            <li class="list-item">B</li>
+            <li class="list-item">C</li>
+            <li class="list-item">D</li>
+        </ul>
+        <input type="password">
+    </div>
+
+
+<script>
+    console.log(document.getElementById('title').className)
+    // we can also use : .id, .getAttribute('id') or any attribute like 'class' --> pass key and get value
+    // .setAttribute modifies the attribute value --> .setAttribute('class', "test heading ")
+    // title.style.backgroundColor='green'
+    // title.style.padding='15px'
+    // title.style.borderRadius='5px'
+    // title.textContent
+    // title.innerHTML
+    // title.innerText
+    console.log(title.textContent) //Learning and Revising DOM in JS  test text
+    console.log(title.innerHTML) //Learning and Revising DOM in JS <span style="display: none;"> test text</span>
+    console.log(title.innerText) //Learning and Revising DOM in JS
+    // document.getElementByClassName('heading') --> Gives HTMlcollection
+    // document.querySelector('h1') //First h1 encountered will be output
+    // document.querySelector('h1') //Picks all the h1 encountered and outputs
+    // document.querySelector('#title') //Picks all with same id encountered and outputs
+    // document.querySelector('.heading') //Picks all with same classname encountered and outputs
+
+    console.log(document.querySelector('input[type="password"]')) //<input type="password">
+
+    document.querySelector('p:first-child')
+    const myUnorderedList = document.querySelector('ul')
+
+
+    console.log(document.querySelectorAll('li')) //Outputs Nodelist of all li --> Not Arrays, has forEach not Map
+    const tempLiList = document.querySelectorAll('li')
+    // tempLiList.style.color='green' //Not allowed --> Gives Error
+    tempLiList[0].style.color='green' //Now works --> Thats the difference between querySelector & querySelectorAll
+
+    //We can also use forEach loop on nodelist
+    tempLiList.forEach(function (l){
+        l.style.backgroundColor="green"
+    })
+
+    console.log(document.getElementsByClassName('.list-item')) //HTMLcollection 
+    // --> Cannot loop on it
+    const tempClassList=document.getElementsByClassName('.list-item')
+    //Not possible :
+    // tempClassList.forEach(function(li){
+    //     console.log(li);
+        
+    // })
+
+    //Converting HTMLcollection to Array
+    const myArr = Array.from(tempClassList) //Gives Array Output which has all array methods
+    myArr.forEach(function(li){
+        li.style.color = "orange"
+    }) // --> Now works
+ 
+
+
+</script>
+</body>
+</html>

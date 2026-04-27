@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+</body>
+<script>
+    //Function definition
+    function addLanguage(langName){
+        const item = document.createElement("li")
+        item.innerHTML = `${langName}`
+        document.querySelector(".language").appendChild(item)
+    }
+    addLanguage("Python") //Function call
+    //Its not optimal though, as browser has to traverse the entire dom tree
+
+    //Optimal method
+    function optiLanguage(langName){
+        const item = document.createElement("li")
+        // item.innerHTML = `${langName}`
+        item.appendChild(document.createTextNode(langName)) //Does not tree, traversal using appenChild
+
+        document.querySelector(".language").appendChild(item)
+    }
+    optiLanguage("GoLang")
+
+    //Edit
+    const secLang =  document.querySelector("li: nth-child(2)")
+    // secondLang.innerHTML = "Mojo" //Not optimal
+    // secondLang.appendChild(document.createTextNode()) //Optimal
+    const newLi= document.createElement('li')
+    newLi.textContent = "Mojo" //Different method, still not as optimal
+    secLang.replaceWith(newLi)
+
+    //edit 
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = `<li>Typescript</li>` //--> different approach
+
+    //Remove
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove() //Remove dom element
+
+
+</script>
+</html>
